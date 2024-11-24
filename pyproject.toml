@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "pathtracker"
+version = "0.0.1"
+description = "Path tracking utility for the shell - Gives you access to the latest paths you have visited"
+authors = ["Ramzan Magomadow"]
+readme = "README.md"
+packages = [{include = "pathtracker"}]
+
+# TODO: Add LICENSE text
+
+[tool.poetry.dependencies]
+python = "^3.12"  # Since you're using 3.12
+# Add your dependencies here
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+ruff = "^0.8.0"
+mypy = "^1.13.0"
+
+[tool.poetry.scripts]
+pclient = "pathtracker.client:main"
+pserver = "pathtracker.server:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
